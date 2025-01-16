@@ -49,10 +49,23 @@ const ShopContextProvider = (props) => {
             }
         }
         return totalCount;
-     }
+     };
+
+     const getCartAmount = () => {
+        let totalAmount = 0;
+      
+        for (const itemId in cartItems) {
+          const itemInfo = products.find((product) => product.id === parseInt(itemId));
+          if (itemInfo) {
+            totalAmount += itemInfo.price * cartItems[itemId];
+          }
+        }
+      
+        return totalAmount;
+      };
 
     const value = {
-        products, currency, delivery_fee, search, setSearch, showSearch, setShowSearch, addToCart, getCartCount
+        products, currency, delivery_fee, search, setSearch, showSearch, setShowSearch, addToCart, getCartCount, getCartAmount
     }
 
     return (
