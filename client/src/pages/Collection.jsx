@@ -67,7 +67,6 @@ const Collection = () => {
   }, [products]);
 
   const singlePage = (productId) => {
-    console.log("productId",productId);
     navigate(`/product/${productId}`);
   }
 
