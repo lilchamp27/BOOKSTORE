@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { products } from "@/assets/assets";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export const ShopContext = createContext();
 
@@ -10,6 +11,8 @@ const ShopContextProvider = (props) => {
   const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState(false);
   const [cartItems, setCartItems] = useState({});
+  const [orderedProducts, setOrderedProducts] = useState([]);
+  const navigate = useNavigate();
 
   const addToCart = async (itemId, format) => {
     if (!format) {
@@ -62,6 +65,46 @@ const ShopContextProvider = (props) => {
     return totalAmount;
   };
 
+    const updateQuantity = async (itemId, format, quantity) => {
+
+        let cartData = structuredClone(cartItems);
+
+        cartData[itemId][format] = quantity
+        setCartItems(cartData);
+    }
+
+    const placeOrder = () => {
+        // Extract product IDs from the cartItems object
+        const productIds = Object.keys(cartItems).map((id) => parseInt(id));
+      
+        // Find the corresponding products from the products array
+        const selectedProducts = productIds.map((productId) => {
+          const product = products.find((item) => item.id === productId);
+      
+          if (product) {
+            // Include formats and quantities for each ordered product
+            return {
+              ...product,
+              formats: cartItems[productId],
+            };
+          }
+      
+          return null;
+        }).filter((product) => product !== null); // Filter out any invalid entries
+      
+        // Update the orderedProducts state
+        setOrderedProducts((prev) => [...prev, ...selectedProducts]);
+      
+        // Clear the cart after placing the order
+        setCartItems({});
+      
+        // Navigate to the orders page
+        navigate('/orders');
+      };
+      
+
+
+
   const value = {
     products,
     currency,
@@ -75,6 +118,10 @@ const ShopContextProvider = (props) => {
     getCartAmount,
     cartItems,
     setCartItems,
+    updateQuantity,
+    navigate,
+    placeOrder,
+    orderedProducts
   };
 
   return <ShopContext.Provider value={value}>{props.children}</ShopContext.Provider>;

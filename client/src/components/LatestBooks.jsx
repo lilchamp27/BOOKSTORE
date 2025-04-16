@@ -14,6 +14,10 @@ const LatestBooks = () => {
 
     console.log(products);
 
+    const singlePage = (productId) => {
+        navigate(`/product/${productId}`);
+      }
+
   return (
     <div>
         <div className='text-center py-8 text-3xl'>
@@ -27,7 +31,7 @@ const LatestBooks = () => {
 
         {
             latestBooks.map((item,index)=> (
-                <ProductItem key={index} id={item._id} image={item.image} title={item.title} price={item.price} ratings={item.ratings}/>
+                <ProductItem key={index} id={item._id} image={item.image} title={item.title} price={item.price} ratings={item.ratings} func={()=> singlePage(item.id)}/>
             ))
         }
 

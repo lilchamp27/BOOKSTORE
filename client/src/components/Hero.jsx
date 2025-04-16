@@ -1,5 +1,6 @@
 import React from 'react';
 import { assets } from '@/assets/assets';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -13,9 +14,11 @@ const Hero = () => {
         <p className="text-gray-700 text-base sm:text-lg mb-6 leading-relaxed">
           Discover your next great read among thousands of books, from timeless classics to the latest bestsellers.
         </p>
+        <Link to={'/collection'}>
         <button className="bg-red-600 text-white py-2 px-4 sm:py-3 sm:px-6 rounded-lg text-sm sm:text-lg hover:bg-blue-700 transition">
           Browse Books
         </button>
+        </Link>
       </div>
 
       {/* Hero Right Side */}
