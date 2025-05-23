@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose'
 
 // Define the Product Schema
 const productSchema = new mongoose.Schema(
@@ -35,10 +35,6 @@ const productSchema = new mongoose.Schema(
         "Fantasy",
         "Self-Help",
       ],
-    },
-    author: {
-      type: String,
-      required: true, // Author of the book
     },
     format: {
       type: [String], // Formats available (e.g., Hardcover, Paperback, eBook)
@@ -77,4 +73,6 @@ const productSchema = new mongoose.Schema(
 );
 
 // Export the Product model
-module.exports = mongoose.model("Product", productSchema);
+const productModel = mongoose.model("Product", productSchema);
+
+export default productModel

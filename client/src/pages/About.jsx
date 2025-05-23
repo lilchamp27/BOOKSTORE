@@ -2,71 +2,104 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br  text-gray-800 flex flex-col items-center px-8 py-16">
-      {/* Header Section */}
-      <div className="max-w-5xl text-center mb-16">
-        <h1 className="text-5xl font-bold tracking-wider text-gray-900">
-          Welcome to <span className="text-blue-700">Book Haven</span>
-        </h1>
-        <p className="mt-6 text-lg text-gray-600 leading-relaxed">
-          A place where stories come alive, and readers find their sanctuary. At Book Haven, we believe books hold the key to endless adventures, learning, and inspiration. Let us guide you to your next favorite escape.
-        </p>
-      </div>
+    <div className="min-h-screen bg-white text-gray-800 px-6 py-0 font-quicksand">
+      {/* Hero Section */}
+   <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 text-center mb-24 py-20 bg-gradient-to-b from-white via-gray-50 to-white">
+  <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-gray-900 leading-tight tracking-tight">
+    Discover <span className="text-blue-700">Book Haven</span>
+  </h1>
+  
+  <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-6">
+    Your sanctuary for captivating stories, insightful knowledge, and boundless imagination.
+    Whether you're escaping into fiction or diving into non-fiction, Book Haven is where your literary journey begins.
+  </p>
 
-      {/* Image Section */}
-      <div className="relative w-full max-w-5xl mb-16">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-200 via-transparent to-gold-200 rounded-lg opacity-50 blur-xl"></div>
+  <div className="mt-8 flex justify-center gap-4 flex-wrap">
+    <button className="px-8 py-3 bg-blue-700 text-white text-base font-medium rounded-full shadow-md hover:bg-blue-800 transition duration-300">
+      Browse Collection
+    </button>
+    <button className="px-8 py-3 bg-white border border-blue-700 text-blue-700 text-base font-medium rounded-full hover:bg-blue-50 transition duration-300">
+      Join Community
+    </button>
+  </div>
+</section>
+
+
+      {/* Image & Quote Section */}
+      <section className="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto mb-24">
         <img
-          src="https://via.placeholder.com/1000x500"
-          alt="A beautiful library"
-          className="w-full rounded-lg shadow-lg"
+          src="https://images.unsplash.com/photo-1512820790803-83ca734da794"
+          alt="Cozy library"
+          className="rounded-xl shadow-lg w-full md:w-1/2 object-cover"
         />
-      </div>
+        <blockquote className="text-xl italic text-gray-700 max-w-xl">
+          "A reader lives a thousand lives before he dies . . . The man who never reads lives only one." — George R.R. Martin
+        </blockquote>
+      </section>
 
-      {/* Our Mission Section */}
-      <div className="max-w-4xl text-center mb-16">
-        <h2 className="text-3xl font-semibold text-blue-700 mb-6">
-          Our Mission
-        </h2>
-        <p className="text-lg leading-relaxed text-gray-700">
-          To inspire a love for reading and create a community where book lovers can come together. We strive to curate the finest selection of books, from timeless classics to contemporary gems, catering to readers of all kinds.
+      {/* Mission and Values */}
+      <section className="bg-white py-20 px-6 sm:px-10 md:px-16 rounded-3xl shadow-lg mb-24">
+  <div className="max-w-6xl mx-auto text-center">
+    <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
+      Our Mission
+    </h2>
+    <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
+      At Book Haven, we believe every book is a doorway. Our mission is to open those doors — to curiosity, imagination, and connection — for readers everywhere.
+    </p>
+
+    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 text-left mt-10">
+      {/* Curation */}
+      <div className="p-6 bg-gray-50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+        <div className="text-blue-700 text-3xl mb-4">📚</div>
+        <h3 className="text-xl font-semibold text-gray-800 mb-2">Curation</h3>
+        <p className="text-gray-600 text-sm">
+          Handpicked titles across every genre, ensuring that each shelf holds something extraordinary.
         </p>
       </div>
 
-      {/* Why Choose Us Section */}
-      <div className="max-w-4xl text-center mb-16">
-        <h2 className="text-3xl font-semibold text-gold-600 mb-6">
-          Why Choose Book Haven?
-        </h2>
-        <ul className="list-none space-y-4">
-          <li className="text-lg text-gray-700 flex items-center justify-center gap-2">
-            <span className="w-3 h-3 bg-blue-700 rounded-full"></span>
-            A carefully curated selection of books across all genres.
-          </li>
-          <li className="text-lg text-gray-700 flex items-center justify-center gap-2">
-            <span className="w-3 h-3 bg-blue-700 rounded-full"></span>
-            A seamless and elegant shopping experience.
-          </li>
-          <li className="text-lg text-gray-700 flex items-center justify-center gap-2">
-            <span className="w-3 h-3 bg-blue-700 rounded-full"></span>
-            A thriving community of passionate readers.
-          </li>
-          <li className="text-lg text-gray-700 flex items-center justify-center gap-2">
-            <span className="w-3 h-3 bg-blue-700 rounded-full"></span>
-            Exclusive offers and events for our members.
-          </li>
-        </ul>
+      {/* Experience */}
+      <div className="p-6 bg-gray-50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+        <div className="text-blue-700 text-3xl mb-4">💫</div>
+        <h3 className="text-xl font-semibold text-gray-800 mb-2">Experience</h3>
+        <p className="text-gray-600 text-sm">
+          A seamless browsing journey built for beauty and ease — from discovery to checkout.
+        </p>
       </div>
+
+      {/* Community */}
+      <div className="p-6 bg-gray-50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+        <div className="text-blue-700 text-3xl mb-4">🤝</div>
+        <h3 className="text-xl font-semibold text-gray-800 mb-2">Community</h3>
+        <p className="text-gray-600 text-sm">
+          Dive into a community of passionate readers, share reviews, and join engaging conversations.
+        </p>
+      </div>
+
+      {/* Events */}
+      <div className="p-6 bg-gray-50 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+        <div className="text-blue-700 text-3xl mb-4">🎉</div>
+        <h3 className="text-xl font-semibold text-gray-800 mb-2">Events</h3>
+        <p className="text-gray-600 text-sm">
+          Enjoy exclusive access to author meetups, book launches, and interactive challenges.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Call to Action */}
-      <div className="text-center">
-        <h3 className="text-2xl font-medium text-gray-800 mb-6">
-          Ready to discover your next favorite book?
+      <section className="text-center max-w-3xl mx-auto">
+        <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
+          Begin your next great read today.
         </h3>
-        <button className="px-10 py-3 text-lg font-medium text-white bg-gradient-to-r from-blue-700 to-gold-600 rounded-full shadow-lg hover:opacity-90 transform hover:scale-105 transition-all">
-          Explore Our Collection
+        <p className="text-gray-600 mb-8">
+          Explore thousands of titles, curated just for you. Find joy, comfort, and excitement—one page at a time.
+        </p>
+        <button className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-full text-lg font-medium shadow-md transition-transform transform hover:scale-105">
+          Browse Collection
         </button>
-      </div>
+      </section>
     </div>
   );
 };

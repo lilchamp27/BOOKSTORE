@@ -11,6 +11,25 @@ a.active hr{
   font-family: Outfit;
 } */
 
+.font-bungee-tint {
+  font-family: "Bungee Tint", sans-serif;
+}
+
+body, #root {
+  margin: 0;
+  padding: 0;
+}
+
+
+.font-quicksand {
+  font-family: "quicksand", sans-serif;
+}
+
+.bungee-tint-regular {
+  font-family: "Bungee Tint", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 .prata-regular {
   font-family: "Prata", serif;
   font-weight: 400;

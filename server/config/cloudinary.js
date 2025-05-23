@@ -1,12 +1,14 @@
-const cloudinary = require('cloudinary').v2; //to require cloudinary
-require("dotenv").config();
+import {v2 as cloudinary} from 'cloudinary'
 
-//initialize cloudinary
+const connectCloudinary = async ()=> {
 
-cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET
-});
+    cloudinary.config({
+        cloud_name: process.env.CLOUDINARY_NAME,
+        api_key: process.env.CLOUDINARY_API_KEY,
+        api_secret:process.env.CLOUDINARY_SECRET_KEY
+    })
 
-module.exports = cloudinary; //export the configured cloudinary object
+
+}
+
+export default connectCloudinary

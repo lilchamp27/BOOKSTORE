@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema(
   {
@@ -43,10 +43,19 @@ const userSchema = new mongoose.Schema(
         ref: 'Order',
       },
     ],
+    cartData: [
+        {
+          type: Object,
+          default: {}
+        }
+    ],
     resetPasswordToken: String,
     resetPasswordExpires: Date,
   },
-  { timestamps: true }
+  { timestamps: true },
+  {minimize: false}
 );
 
-module.exports = mongoose.model('User', userSchema);
+const userModel= mongoose.model('User', userSchema);
+
+export default userModel
